@@ -13,7 +13,6 @@ const Blogs = () => {
       .then(blogArray => {
         setBlogs(blogArray);
       })
-    console.log("blogs", blogs)
   }
 
   const getUsers = () => {
@@ -22,7 +21,6 @@ const Blogs = () => {
       .then(userArray => {
         setUsers(userArray);
       })
-    console.log("users", users)
   }
 
   for (let i = 0; i < blogs.length; i++) {
@@ -33,7 +31,6 @@ const Blogs = () => {
       combinedEntries.push(blogs[i]);
     }
   }
-  console.log("combine", combinedEntries)
   useEffect(() => {
     getBlogs();
     getUsers();

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const IndividualUser = () => {
     const [users, setUsers] = useState([]);
@@ -7,6 +7,7 @@ const IndividualUser = () => {
     const [comments, setComments] = useState([])
 
     let { id } = useParams()
+    const navigate = useNavigate()
 
     const getUsers = () => {
         fetch("https://jsonplaceholder.typicode.com/users")
@@ -27,14 +28,16 @@ const IndividualUser = () => {
             .then(commentsArray => setComments(commentsArray))
     }
 
+    const goToSinglePostPage = (index) => {
+        navigate(`/individualpost/${id}/${index}`)
+    }
+
     useEffect(() => {
         getUsers();
         getPosts();
         getComments();
     }, [1])
 
-    console.log("Each user users", users)
-    console.log("Each User post", posts)
 
     return (
         <div className='container'>
@@ -46,9 +49,9 @@ const IndividualUser = () => {
                         {
                             posts.map((item, index) => {
                                 return (
-                                    <div key={index} className='list-group-item'>
+                                    <button key={index} className='list-group-item' onClick={goToSinglePostPage.bind(this, index)}>
                                         {item.title}
-                                    </div>
+                                    </button>
                                 )
                             })
                         }
