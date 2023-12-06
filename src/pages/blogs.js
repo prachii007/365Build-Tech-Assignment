@@ -47,7 +47,7 @@ const Blogs = () => {
           </svg>
         </button>
       </div>
-      <div className='border rounded'>
+      <div className='list-group'>
         {combinedEntries.map((entry, index) => {
           return (
             <BlogCard entry={entry} index={index} />
