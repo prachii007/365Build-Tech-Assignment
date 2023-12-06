@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
 const Users = () => {
 
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate()
 
   const getUsers = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(Response => Response.json())
       .then(userArray => setUsers(userArray))
+  }
+
+  const goToSingleUserPage = (index) => {
+    navigate(`/individualuser/${index}`)
   }
 
   useEffect(() => {
@@ -20,14 +26,13 @@ const Users = () => {
       <div className='list-group'>
         {users.map((item, index) => {
           return (
-            <a className='list-group-item' key={index} href="hh">
+            <button className='list-group-item text-start' key={index} onClick={goToSingleUserPage.bind(this, index)}>
               {item.name}
-            </a>
+            </button>
           )
         })
         }
       </div>
-
     </div>
   )
 }
