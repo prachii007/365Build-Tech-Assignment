@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import CommentCard from './components/commentCard';
 
 const IndividualPost = () => {
     const [post, setPosts] = useState([]);
@@ -37,14 +38,7 @@ const IndividualPost = () => {
                         {
                             comments.map((item, index) => {
                                 return (
-                                    <div key={index} className='list-group-item'>
-                                        <p>{item.body}</p>
-                                        <div className='d-flex justify-content-end'>
-                                            <small>
-                                                <em>by {item.email}</em>
-                                            </small>
-                                        </div>
-                                    </div>
+                                    <CommentCard key={index} item={item} index={index} />
                                 )
                             })
                         }

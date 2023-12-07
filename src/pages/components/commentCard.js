@@ -1,7 +1,15 @@
 import React from 'react'
 
-export const CommentCard = () => {
+const CommentCard = ({ item, index }) => {
   return (
-    <div>CommentCard</div>
+    <div className='list-group-item'>
+      <p>{item.body}</p>
+      <div className='d-flex justify-content-end'>
+        <small>
+          <em>by {item.email}</em>
+        </small>
+      </div>
+    </div>
   )
 }
+export default CommentCard;
