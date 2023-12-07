@@ -61,7 +61,7 @@ const Blogs = () => {
       <div className='list-group'>
         {combinedEntries.map((entry, index) => {
           return (
-            <BlogCard entry={entry} index={index} goToSinglePostPage={goToSinglePostPage} goToSingleUserPage={goToSingleUserPage} />
+            <BlogCard key={index} entry={entry} index={index} goToSinglePostPage={goToSinglePostPage} goToSingleUserPage={goToSingleUserPage} />
           )
         })}
       </div>

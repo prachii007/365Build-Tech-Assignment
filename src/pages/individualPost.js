@@ -38,7 +38,7 @@ const IndividualPost = () => {
                         {
                             comments.map((item, index) => {
                                 return (
-                                    <CommentCard key={index} item={item} index={index} />
+                                    <CommentCard key={index} item={item} />
                                 )
                             })
                         }
