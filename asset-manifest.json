@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/365Build-Tech-Assignment/static/css/main.7ff35193.css",
+    "main.js": "/365Build-Tech-Assignment/static/js/main.3b821593.js",
+    "static/js/787.55637a52.chunk.js": "/365Build-Tech-Assignment/static/js/787.55637a52.chunk.js",
+    "index.html": "/365Build-Tech-Assignment/index.html",
+    "main.7ff35193.css.map": "/365Build-Tech-Assignment/static/css/main.7ff35193.css.map",
+    "main.3b821593.js.map": "/365Build-Tech-Assignment/static/js/main.3b821593.js.map",
+    "787.55637a52.chunk.js.map": "/365Build-Tech-Assignment/static/js/787.55637a52.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ff35193.css",
+    "static/js/main.3b821593.js"
+  ]
+}
