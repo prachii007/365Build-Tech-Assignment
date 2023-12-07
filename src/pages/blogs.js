@@ -38,6 +38,10 @@ const Blogs = () => {
     navigate(`/individualpost/${parseInt(entry.userId) - 1}/${index % 10}`)
   }
 
+  const goToSingleUserPage = (entry) => {
+    navigate(`/individualuser/${parseInt(entry.userId) - 1}`)
+  }
+
   useEffect(() => {
     getBlogs();
     getUsers();
@@ -57,7 +61,7 @@ const Blogs = () => {
       <div className='list-group'>
         {combinedEntries.map((entry, index) => {
           return (
-            <BlogCard entry={entry} index={index} goToSinglePostPage={goToSinglePostPage} />
+            <BlogCard entry={entry} index={index} goToSinglePostPage={goToSinglePostPage} goToSingleUserPage={goToSingleUserPage} />
           )
         })}
       </div>
